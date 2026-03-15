@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Ballot 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-stone-100 text-stone-900 font-sans">
+    <header class="sticky top-0 z-50 bg-black text-white p-4 shadow-md flex justify-between items-center">
+        <h1 class="text-xl font-bold">Oscars 2026</h1>
+        <div class="flex items-center gap-4">
+            <button id="header-reset-btn" class="text-xs uppercase tracking-widest font-bold text-stone-400 hover:text-white transition-colors p-2 -m-2 cursor-pointer">Reset</button>
+            <div id="score-display" class="text-lg font-semibold bg-emerald-600 px-3 py-1 rounded-full">Score: 0</div>
+        </div>
+    </header>
+
+    <main id="app-container" class="max-w-md mx-auto p-4 pb-32">
+        <div id="message-container" class="fixed top-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col items-center gap-2"></div>
+        <!-- Progress Indicator -->
+        <div id="progress-indicator" class="text-sm text-stone-500 mb-2 uppercase tracking-wider font-semibold">
+            Category 1 of 23
+        </div>
+
+        <!-- Category Content -->
+        <div id="category-view">
+            <h2 id="category-title" class="text-2xl font-bold mb-6 leading-tight">Best Picture</h2>
+            
+            <div id="nominees-list" class="space-y-3">
+                <!-- Nominees will be injected here -->
+            </div>
+
+            <div id="action-area" class="mt-8 space-y-4">
+                <!-- Confirm/Result buttons will be injected here -->
+            </div>
+        </div>
+
+        <!-- Results Screen (Hidden by default) -->
+        <div id="results-view" class="hidden text-center py-10">
+            <h2 class="text-3xl font-bold mb-4">Final Results</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200">
+                <div id="rank-display" class="text-xs font-black uppercase tracking-[0.2em] text-emerald-600 mb-2">Oscar Oracle</div>
+                <div class="text-6xl font-black text-stone-900 mb-2" id="final-score">0</div>
+                <div class="text-stone-500 uppercase tracking-widest text-sm font-bold mb-6">Final Score</div>
+                
+                <div class="grid grid-cols-2 gap-4 text-left border-t border-stone-100 pt-6 mb-6">
+                    <div>
+                        <div class="text-xs text-stone-400 uppercase font-bold">Total Categories</div>
+                        <div class="text-xl font-bold" id="total-categories">23</div>
+                    </div>
+                    <div>
+                        <div class="text-xs text-stone-400 uppercase font-bold">Accuracy</div>
+                        <div class="text-xl font-bold" id="accuracy-pct">0%</div>
+                    </div>
+                </div>
+
+                <button id="share-btn" class="w-full py-4 bg-emerald-600 text-white rounded-xl font-bold shadow-lg shadow-emerald-200 active:scale-95 transition-transform">Share Results</button>
+            </div>
+
+            <div class="mt-8 text-left">
+                <h3 class="text-sm font-bold uppercase tracking-widest text-stone-400 mb-4 px-2">Ballot Review</h3>
+                <div id="ballot-review" class="space-y-2">
+                    <!-- Review items will be injected here -->
+                </div>
+            </div>
+
+            <button id="reset-btn" class="mt-12 text-stone-400 font-semibold underline">Reset All Progress</button>
+        </div>
+    </main>
+
+    <nav id="bottom-nav" class="fixed bottom-0 left-0 right-0 bg-white border-t border-stone-200 p-4 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-md mx-auto flex flex-col gap-3">
+            <div class="flex justify-between gap-2">
+                <button id="prev-btn" class="flex-1 py-3 px-4 rounded-xl border border-stone-200 font-bold text-stone-600 active:bg-stone-50 disabled:opacity-30">Previous</button>
+                <button id="next-btn" class="flex-1 py-3 px-4 rounded-xl bg-black text-white font-bold active:bg-stone-800 disabled:opacity-30">Next</button>
+            </div>
+            <select id="jump-selector" class="w-full p-3 rounded-xl border border-stone-200 bg-stone-50 font-medium text-stone-700 appearance-none">
+                <!-- Options will be injected here -->
+            </select>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

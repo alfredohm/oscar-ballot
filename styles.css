@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Custom styles for the Oscar Ballot */
+
+:root {
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-900: #1c1917;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Nominee Button Styles */
+.nominee-btn {
+    @apply w-full text-left p-4 rounded-2xl border-2 border-stone-200 bg-white transition-all duration-200 flex flex-col gap-1;
+}
+
+.nominee-btn.selected {
+    @apply border-emerald-600 bg-emerald-50 ring-2 ring-emerald-600/50;
+}
+
+.nominee-btn.confirmed {
+    @apply opacity-100 border-stone-300 bg-stone-50 cursor-default;
+}
+
+.nominee-btn.confirmed.selected {
+    @apply border-black bg-stone-200 text-black;
+}
+
+.nominee-btn:active:not(.confirmed) {
+    @apply scale-[0.98] bg-stone-50;
+}
+
+/* Action Buttons */
+.btn-confirm {
+    @apply w-full py-5 rounded-2xl bg-emerald-600 text-white font-black text-xl shadow-lg shadow-emerald-600/20 active:scale-95 transition-transform;
+}
+
+.btn-correct {
+    @apply w-full py-5 rounded-2xl bg-emerald-600 text-white font-black text-xl shadow-lg shadow-emerald-600/20 active:scale-95 transition-transform;
+}
+
+.btn-wrong {
+    @apply w-full py-5 rounded-2xl bg-rose-600 text-white font-black text-xl shadow-lg shadow-rose-600/20 active:scale-95 transition-transform;
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+/* Custom Select Styling */
+#jump-selector {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23444' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+}
